@@ -47,8 +47,6 @@ jobs:
           export PATH=$PATH:$HOME/.local/bin
           poetry debug info
           poetry install --no-root
-      - name: Task test
-        run: |
           poetry run task test
 
   task_lint:
@@ -70,6 +68,4 @@ jobs:
           export PATH=$PATH:$HOME/.local/bin
           poetry debug info
           poetry install --no-root
-      - name: Task test
-        run: |
           poetry run task test
