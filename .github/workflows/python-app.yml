@@ -8,7 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+concurrency:
+   group:  Group 1 - Run tests
 permissions:
   contents: read
 
