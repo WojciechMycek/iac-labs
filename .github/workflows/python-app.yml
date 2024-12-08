@@ -9,21 +9,21 @@ on:
       - main
 
 jobs:
-  group1:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Group 1 - Run tests
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
         run: |
-          echo "Running tests for group 1"
-          # Command for tests for group 1
-
-      - name: Group 1 - Build project
-        run: |
-          echo "Building project for group 1"
-          # Command for building project for group 1
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
   group2:
     runs-on: ubuntu-latest
