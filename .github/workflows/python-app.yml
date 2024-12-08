@@ -35,7 +35,6 @@ jobs:
         export PATH=$PATH:$HOME/.local/bin
         poetry debug info
         poetry install --no-root
-        poetry run task local
     - name: Test with pytest
       run: |
         poetry run task test
